@@ -16,20 +16,17 @@ namespace MVVM_template.ViewModels.Converters
   {
     private Brush TrueValue { get; set; } = new SolidColorBrush(System.Windows.Media.Colors.Red); // could be used directly instead of defining here but for consistency it is defined
     private Brush FalseValue { get; set; } = new SolidColorBrush(System.Windows.Media.Colors.Lime); // could be used directly instead of defining here but for consistency it is defined
-
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
       if (value is not bool) return Binding.DoNothing;
       return (bool)value ? TrueValue : FalseValue;
     }
-
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
       if (value == TrueValue) return true;
       if (value == FalseValue) return false;
       return Binding.DoNothing;
     }
-
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
       return this;

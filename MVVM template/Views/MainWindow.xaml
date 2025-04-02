@@ -15,14 +15,14 @@
   mc:Ignorable="d">
   <Window.Resources>
     <ResourceDictionary>
-      <SolidColorBrush x:Key="myButtonColor" Color="#FF838383" />
+      <SolidColorBrush x:Key="myButtonColor" Color="#FFB7CAAD" />
       <Style TargetType="Button">
         <Style.Setters>
           <Setter Property="Background" Value="{StaticResource myButtonColor}" />
-          <Setter Property="Foreground" Value="White" />
+          <Setter Property="Foreground" Value="Black" />
         </Style.Setters>
       </Style>
-    <Converters:BoolToBrushColorConverter x:Key="BoolToColorConverter" />
+      <Converters:BoolToBrushColorConverter x:Key="BoolToColorConverter" />
     </ResourceDictionary>
 
   </Window.Resources>
@@ -34,9 +34,7 @@
   <DockPanel>
     <StackPanel DockPanel.Dock="Top">
 
-      <!--
-        no clck event, instead bind to a command
-      -->
+      <!--  no clck event, instead bind to a command  -->
       <Button
         Margin="10"
         Command="{Binding DoSomethingCommand}"
@@ -45,23 +43,22 @@
 
       <StackPanel Orientation="Horizontal">
         <Label Content="a string:" />
-        <!--
-          content is set to a string property
-        -->
+        <!--  content is set to a string property  -->
         <Label d:Content="ABC" Content="{Binding SomethingString}" />
       </StackPanel>
 
       <StackPanel Orientation="Horizontal">
         <Label Content="convert bool to color:" />
-        <!--
-          must use a converter to convert a boolean to a visibility setting
-        -->
+        <!--  must use a converter to convert a boolean to a visibility setting  -->
         <Label Background="{Binding IsSomethingBool, Converter={Converters:BoolToBrushColorConverter}}" Content="color" />
       </StackPanel>
 
       <StackPanel Orientation="Horizontal">
         <Label Content="convert bool to visible:" />
-        <Label d:Visibility="Collapsed" Content="Hello World" Visibility="{Binding IsSomethingBool, Converter={StaticResource BoolToVis}}" />
+        <Label
+          d:Visibility="Collapsed"
+          Content="Hello World"
+          Visibility="{Binding IsSomethingBool, Converter={StaticResource BoolToVis}}" />
         <Label Content="Goodbye World" Visibility="{Binding IsNotSomethingBool, Converter={StaticResource BoolToVis}}" />
       </StackPanel>
 
@@ -77,9 +74,7 @@
         you could also use one-way binding (Text="{Binding MyString, Mode=OneWay}")
       -->
       <TextBox x:Name="txtMyString" d:Text="myString" />
-      <!--
-        command with a parameter referencing a named textbox
-      -->
+      <!--  command with a parameter referencing a named textbox  -->
       <Button
         Margin="10"
         Command="{Binding DoSomethingWithStringCommand}"

@@ -63,26 +63,41 @@ namespace MVVM_template.ViewModels
     }
 
     private bool isSomethingBool;
-    public bool IsSomethingBool { get => isSomethingBool; set { if (isSomethingBool != value) { isSomethingBool = value; OnPropertyChanged(); OnPropertyChanged(nameof(IsNotSomethingBool)); } } }
+    public bool IsSomethingBool
+    {
+      get => isSomethingBool;
+      set
+      {
+        if (isSomethingBool != value)
+        {
+          isSomethingBool = value;
+          OnPropertyChanged(); // trigger the ui to update
+          OnPropertyChanged(nameof(IsNotSomethingBool)); // trigger the ui to also update this property
+        }
+      }
+    }
+
+    // a readonly property. no way to trigger OnPropertyChanged
     public bool IsNotSomethingBool { get => !IsSomethingBool; }
 
     private string somethingString = string.Empty;
-    public string SomethingString { get => somethingString; set { if (somethingString != value) { somethingString = value; OnPropertyChanged(); } } }
+    public string SomethingString
+    {
+      get => somethingString;
+      // only settable from within the class
+      private set { if (somethingString != value) { somethingString = value; OnPropertyChanged(); } }
+    }
     private string myString = string.Empty;
     public string MyString { get => myString; set { if (myString != value) { myString = value; OnPropertyChanged(); } } }
 
     private int myDictionaryValue = 0;
-    public string MyDictionaryValue { 
-      get {
-        try
-        {
-          return Data.MyDictionary.Where(p => p.Key == myDictionaryValue).First().Value;
-        }
-        catch (Exception)
-        {
-          return string.Empty;
-        }
-      } 
+    public string MyDictionaryValue
+    {
+      get
+      {
+        try { return StaticGlobals.MyDictionary.Where(p => p.Key == myDictionaryValue).First().Value; }
+        catch (Exception) { return string.Empty; }
+      }
     }
     #endregion
   }
