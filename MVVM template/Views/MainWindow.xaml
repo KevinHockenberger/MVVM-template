@@ -13,6 +13,10 @@
   d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
   FontSize="20"
   mc:Ignorable="d">
+  <!--  if you want to assign datacontext in xaml only use the following  -->
+  <!--<Window.DataContext>
+    <vm:MainWindowViewModel />
+  </Window.DataContext>-->
   <Window.Resources>
     <ResourceDictionary>
       <SolidColorBrush x:Key="myButtonColor" Color="#FFB7CAAD" />
