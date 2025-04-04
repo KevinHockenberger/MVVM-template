@@ -9,7 +9,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace SH8_sample.ViewModels.Converters
+namespace MVVM_template.ViewModels.Converters
 {
   //any custom converters you want to use in your xaml
   public class BoolToBrushColorConverter : MarkupExtension, IValueConverter

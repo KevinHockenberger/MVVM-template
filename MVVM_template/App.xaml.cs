@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace SH8_sample;
+namespace MVVM_template;
 
 /// <summary>
 /// Interaction logic for App.xaml

@@ -1,2 +1,2 @@
 # SH8-sample
-Sherlock 8 custom GUI example
+Simple place to store mvvm-ish code samples for reference

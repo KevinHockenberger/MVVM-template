@@ -1,4 +1,4 @@
-﻿using SH8_sample.Models;
+﻿using MVVM_template.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SH8_sample.ViewModels
+namespace MVVM_template.ViewModels
 {
   // must implement INotifyPropertyChanged to update the view when properties change
   public class MainWindowViewModel : INotifyPropertyChanged
