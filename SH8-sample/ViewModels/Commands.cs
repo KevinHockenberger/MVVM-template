@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MVVM_template.ViewModels
+namespace SH8_sample.ViewModels
 {
   // use the relay command for commands that take a parameter
   public class RelayCommand<T>(Action<T?>? execute, Predicate<T?> canExecute) : ICommand

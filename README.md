@@ -1,2 +1,2 @@
-# MVVM template
-Just a place to keep WPF MVVM ish code for future reference.
+# SH8-sample
+Sherlock 8 custom GUI example
